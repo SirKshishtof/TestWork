@@ -1,0 +1,196 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Base\\Zlowolf\\\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 DNS\\backend\\OrganizationalStructure\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{14F77C42-4085-4566-8C8C-C175EA049D62}|OrganizationalStructure.csproj|d:\\base\\zlowolf\\\u0442\u0435\u0441\u0442\u043E\u0432\u043E\u0435 dns\\backend\\organizationalstructure\\entities\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{14F77C42-4085-4566-8C8C-C175EA049D62}|OrganizationalStructure.csproj|solutionrelative:entities\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14F77C42-4085-4566-8C8C-C175EA049D62}|OrganizationalStructure.csproj|d:\\base\\zlowolf\\\u0442\u0435\u0441\u0442\u043E\u0432\u043E\u0435 dns\\backend\\organizationalstructure\\controllers\\orgstructcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{14F77C42-4085-4566-8C8C-C175EA049D62}|OrganizationalStructure.csproj|solutionrelative:controllers\\orgstructcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14F77C42-4085-4566-8C8C-C175EA049D62}|OrganizationalStructure.csproj|d:\\base\\zlowolf\\\u0442\u0435\u0441\u0442\u043E\u0432\u043E\u0435 dns\\backend\\organizationalstructure\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{14F77C42-4085-4566-8C8C-C175EA049D62}|OrganizationalStructure.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14F77C42-4085-4566-8C8C-C175EA049D62}|OrganizationalStructure.csproj|d:\\base\\zlowolf\\\u0442\u0435\u0441\u0442\u043E\u0432\u043E\u0435 dns\\backend\\organizationalstructure\\request\\createemployeerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{14F77C42-4085-4566-8C8C-C175EA049D62}|OrganizationalStructure.csproj|solutionrelative:request\\createemployeerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14F77C42-4085-4566-8C8C-C175EA049D62}|OrganizationalStructure.csproj|d:\\base\\zlowolf\\\u0442\u0435\u0441\u0442\u043E\u0432\u043E\u0435 dns\\backend\\organizationalstructure\\databaseacsses\\orgstructdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{14F77C42-4085-4566-8C8C-C175EA049D62}|OrganizationalStructure.csproj|solutionrelative:databaseacsses\\orgstructdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14F77C42-4085-4566-8C8C-C175EA049D62}|OrganizationalStructure.csproj|d:\\base\\zlowolf\\\u0442\u0435\u0441\u0442\u043E\u0432\u043E\u0435 dns\\backend\\organizationalstructure\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{14F77C42-4085-4566-8C8C-C175EA049D62}|OrganizationalStructure.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14F77C42-4085-4566-8C8C-C175EA049D62}|OrganizationalStructure.csproj|d:\\base\\zlowolf\\\u0442\u0435\u0441\u0442\u043E\u0432\u043E\u0435 dns\\backend\\organizationalstructure\\request\\getnotesrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{14F77C42-4085-4566-8C8C-C175EA049D62}|OrganizationalStructure.csproj|solutionrelative:request\\getnotesrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14F77C42-4085-4566-8C8C-C175EA049D62}|OrganizationalStructure.csproj|d:\\base\\zlowolf\\\u0442\u0435\u0441\u0442\u043E\u0432\u043E\u0435 dns\\backend\\organizationalstructure\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{14F77C42-4085-4566-8C8C-C175EA049D62}|OrganizationalStructure.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14F77C42-4085-4566-8C8C-C175EA049D62}|OrganizationalStructure.csproj|d:\\base\\zlowolf\\\u0442\u0435\u0441\u0442\u043E\u0432\u043E\u0435 dns\\backend\\organizationalstructure\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{14F77C42-4085-4566-8C8C-C175EA049D62}|OrganizationalStructure.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14F77C42-4085-4566-8C8C-C175EA049D62}|OrganizationalStructure.csproj|d:\\base\\zlowolf\\\u0442\u0435\u0441\u0442\u043E\u0432\u043E\u0435 dns\\backend\\organizationalstructure\\organizationalstructure.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{14F77C42-4085-4566-8C8C-C175EA049D62}|OrganizationalStructure.csproj|solutionrelative:organizationalstructure.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "D:\\Base\\Zlowolf\\\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 DNS\\backend\\OrganizationalStructure\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
+              "ToolTip": "D:\\Base\\Zlowolf\\\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 DNS\\backend\\OrganizationalStructure\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Properties\\launchSettings.json",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-10-31T13:19:24.716Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Base\\Zlowolf\\\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 DNS\\backend\\OrganizationalStructure\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "D:\\Base\\Zlowolf\\\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 DNS\\backend\\OrganizationalStructure\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-10-31T06:53:44.766Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "OrganizationalStructure.http",
+              "DocumentMoniker": "D:\\Base\\Zlowolf\\\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 DNS\\backend\\OrganizationalStructure\\OrganizationalStructure.http",
+              "RelativeDocumentMoniker": "OrganizationalStructure.http",
+              "ToolTip": "D:\\Base\\Zlowolf\\\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 DNS\\backend\\OrganizationalStructure\\OrganizationalStructure.http",
+              "RelativeToolTip": "OrganizationalStructure.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2024-10-31T06:53:42.862Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "GetNotesRequest.cs",
+              "DocumentMoniker": "D:\\Base\\Zlowolf\\\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 DNS\\backend\\OrganizationalStructure\\Request\\GetNotesRequest.cs",
+              "RelativeDocumentMoniker": "Request\\GetNotesRequest.cs",
+              "ToolTip": "D:\\Base\\Zlowolf\\\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 DNS\\backend\\OrganizationalStructure\\Request\\GetNotesRequest.cs",
+              "RelativeToolTip": "Request\\GetNotesRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-31T02:56:32.186Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "D:\\Base\\Zlowolf\\\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 DNS\\backend\\OrganizationalStructure\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "appsettings.Development.json",
+              "ToolTip": "D:\\Base\\Zlowolf\\\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 DNS\\backend\\OrganizationalStructure\\appsettings.Development.json",
+              "RelativeToolTip": "appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-10-31T02:21:49.838Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CreateEmployeeRequest.cs",
+              "DocumentMoniker": "D:\\Base\\Zlowolf\\\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 DNS\\backend\\OrganizationalStructure\\Request\\CreateEmployeeRequest.cs",
+              "RelativeDocumentMoniker": "Request\\CreateEmployeeRequest.cs",
+              "ToolTip": "D:\\Base\\Zlowolf\\\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 DNS\\backend\\OrganizationalStructure\\Request\\CreateEmployeeRequest.cs",
+              "RelativeToolTip": "Request\\CreateEmployeeRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-31T02:21:18.719Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Employee.cs",
+              "DocumentMoniker": "D:\\Base\\Zlowolf\\\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 DNS\\backend\\OrganizationalStructure\\Entities\\Employee.cs",
+              "RelativeDocumentMoniker": "Entities\\Employee.cs",
+              "ToolTip": "D:\\Base\\Zlowolf\\\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 DNS\\backend\\OrganizationalStructure\\Entities\\Employee.cs",
+              "RelativeToolTip": "Entities\\Employee.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAYwB4AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-31T01:24:43.536Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "OrgStructDBContext.cs",
+              "DocumentMoniker": "D:\\Base\\Zlowolf\\\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 DNS\\backend\\OrganizationalStructure\\DatabaseAcsses\\OrgStructDBContext.cs",
+              "RelativeDocumentMoniker": "DatabaseAcsses\\OrgStructDBContext.cs",
+              "ToolTip": "D:\\Base\\Zlowolf\\\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 DNS\\backend\\OrganizationalStructure\\DatabaseAcsses\\OrgStructDBContext.cs",
+              "RelativeToolTip": "DatabaseAcsses\\OrgStructDBContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-31T01:03:52.302Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "OrgStructController.cs",
+              "DocumentMoniker": "D:\\Base\\Zlowolf\\\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 DNS\\backend\\OrganizationalStructure\\Controllers\\OrgStructController.cs",
+              "RelativeDocumentMoniker": "Controllers\\OrgStructController.cs",
+              "ToolTip": "D:\\Base\\Zlowolf\\\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 DNS\\backend\\OrganizationalStructure\\Controllers\\OrgStructController.cs",
+              "RelativeToolTip": "Controllers\\OrgStructController.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAkwBoAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-31T00:57:11.984Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Base\\Zlowolf\\\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 DNS\\backend\\OrganizationalStructure\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\Base\\Zlowolf\\\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 DNS\\backend\\OrganizationalStructure\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-31T00:47:21.488Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

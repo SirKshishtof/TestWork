@@ -1,0 +1,6 @@
+@OrganizationalStructure_HostAddress = http://localhost:5036
+
+GET {{OrganizationalStructure_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

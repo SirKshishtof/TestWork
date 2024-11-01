@@ -1,0 +1,60 @@
+[
+  {
+    "ContainingType": "OrganizationalStructure.Controllers.OrgStructController",
+    "Method": "DeleteEmplloye",
+    "RelativePath": "delete",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Code",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OrganizationalStructure.Controllers.OrgStructController",
+    "Method": "GetEmployees",
+    "RelativePath": "employee",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OrganizationalStructure.Controllers.OrgStructController",
+    "Method": "FireEmplloye",
+    "RelativePath": "fire",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Code",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OrganizationalStructure.Controllers.OrgStructController",
+    "Method": "CreateEmployee",
+    "RelativePath": "hire",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "OrganizationalStructure.Request.CreateEmployeeRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
