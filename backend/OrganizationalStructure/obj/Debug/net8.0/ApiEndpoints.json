@@ -8,7 +8,7 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "Code",
+        "Name": "employeeCode",
         "Type": "System.String",
         "IsRequired": false
       }
@@ -34,7 +34,7 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "Code",
+        "Name": "employeeCode",
         "Type": "System.String",
         "IsRequired": false
       }

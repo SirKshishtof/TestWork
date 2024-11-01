@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7C/Qd1Awa4k=",
+  "dgSpecHash": "59k2G1YOcWo=",
   "success": true,
-  "projectFilePath": "D:\\Base\\Zlowolf\\Тестовое DNS\\backend\\OrganizationalStructure\\OrganizationalStructure.csproj",
+  "projectFilePath": "D:\\Base\\Zlowolf\\TestWork\\backend\\OrganizationalStructure\\OrganizationalStructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\wessy\\.nuget\\packages\\microsoft.entityframeworkcore\\9.0.0-rc.2.24474.1\\microsoft.entityframeworkcore.9.0.0-rc.2.24474.1.nupkg.sha512",
     "C:\\Users\\wessy\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\9.0.0-rc.2.24474.1\\microsoft.entityframeworkcore.abstractions.9.0.0-rc.2.24474.1.nupkg.sha512",
