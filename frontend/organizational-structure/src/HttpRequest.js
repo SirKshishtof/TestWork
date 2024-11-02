@@ -16,10 +16,27 @@ import axios from "axios";
 // 	}
 // };
 
-export const fetchNotes = async (note) => 
+
+export async function createEmployees(newEmployee)
 {
-	var resposne = await axios.get("https://localhost:7146/employee");
-	console.log(resposne);
+	try {
+		let resposne = await axios.post("http://localhost:5003/notes", newEmployee);
+		return resposne.status;
+	} catch (e) {
+		console.error(e);
+	}
+};
+
+export async function fetchEmployees()
+{
+	try {
+	var resposne = await axios.get("https://localhost:7146/allemployee");
+	
+		return resposne.data;
+	} 
+	catch (e) {
+		console.error(e);
+	}
 };
 
 // axios.post('/user', {
@@ -32,3 +49,33 @@ export const fetchNotes = async (note) =>
 //   .catch(function (error) {
 //     console.log(error);
 //   });
+
+
+
+
+
+// export const fetchNotes = async (filter) => {
+// 	try {
+// 		var resposne = await axios.get("http://localhost:5003/notes", {
+// 			params: {
+// 				search: filter?.search,
+// 				sortItem: filter?.sortItem,
+// 				sortOrder: filter?.sortOrder,
+// 			},
+// 		});
+
+// 		return resposne.data.notes;
+// 	} catch (e) {
+// 		console.error(e);
+// 	}
+// };
+
+// export const createNote = async (note) => {
+// 	try {
+// 		var resposne = await axios.post("http://localhost:5003/notes", note);
+
+// 		return resposne.status;
+// 	} catch (e) {
+// 		console.error(e);
+// 	}
+// };

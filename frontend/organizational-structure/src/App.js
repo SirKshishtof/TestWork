@@ -1,12 +1,12 @@
 // import { useEffect } from "react";
-// import { fetchNotes } from "./HttpRequest.js";
+// import {  } from "./HttpRequest.js";
 import LabTabs from "./tab.js";
 
 
 function App() {
   // useEffect(() => {
   //   const fetchData = async () => {
-  //     await fetchNotes();
+  //     await ();
   //   };
   //   fetchData();
   // }, []);

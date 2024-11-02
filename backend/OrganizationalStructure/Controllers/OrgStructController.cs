@@ -16,6 +16,7 @@ namespace OrganizationalStructure.Controllers
         {
             this.dbContext = dbContext;
         }
+
         [HttpPost("/hire")]
         public async Task<IActionResult> CreateEmployee([FromBody] CreateEmployeeRequest request)
         {
@@ -35,8 +36,20 @@ namespace OrganizationalStructure.Controllers
             //}
         }
 
+        [HttpGet("/allemployee")]
+        public async Task<IActionResult> GetAllEmployee(/*[FromQuery] GetEmployeeRequest request*/)
+        {
+            var notesQuery = dbContext.Employees;
+            ////.Where(n => !string.IsNullOrWhiteSpace(request.Search));
+
+            //var notesQuery = dbContext.Employees
+            //.Where(n => n.FirstName == request.Code);
+
+            return Ok(notesQuery);
+        }
+
         [HttpGet("/employee")]
-        public async Task<IActionResult> GetEmployees(/*[FromQuery] GetEmployeeRequest request*/)
+        public async Task<IActionResult> GetEmployee(/*[FromQuery] GetEmployeeRequest request*/)
         {
             var notesQuery = dbContext.Employees;
             ////.Where(n => !string.IsNullOrWhiteSpace(request.Search));
@@ -61,4 +74,6 @@ namespace OrganizationalStructure.Controllers
             return Ok();
         }
     }
+
+
 }

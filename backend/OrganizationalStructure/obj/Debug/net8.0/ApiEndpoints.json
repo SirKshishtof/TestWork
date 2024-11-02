@@ -1,6 +1,16 @@
 [
   {
     "ContainingType": "OrganizationalStructure.Controllers.OrgStructController",
+    "Method": "GetAllEmployee",
+    "RelativePath": "allemployee",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OrganizationalStructure.Controllers.OrgStructController",
     "Method": "DeleteEmplloye",
     "RelativePath": "delete",
     "HttpMethod": "DELETE",
@@ -17,7 +27,7 @@
   },
   {
     "ContainingType": "OrganizationalStructure.Controllers.OrgStructController",
-    "Method": "GetEmployees",
+    "Method": "GetEmployee",
     "RelativePath": "employee",
     "HttpMethod": "GET",
     "IsController": true,

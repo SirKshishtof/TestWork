@@ -7,7 +7,7 @@ namespace OrganizationalStructure.Entities
 {
     public class Employee
     {
-        public Employee(string firstName, string lastName, string middleName, Guid leaderId, string role)
+        public Employee(string firstName, string lastName, string middleName, int leaderId, string role)
         {
             FirstName = firstName;
             LastName = lastName;
@@ -32,7 +32,7 @@ namespace OrganizationalStructure.Entities
         public string FirstName { get; init; }//Имя
         public string LastName { get; init; }//Фамилия
         public string MiddleName { get; init; }//Отчество
-        public Guid LeaderId { get; init; } = Guid.Empty;//Id Руководителя сотрудника
+        public int LeaderId { get; init; }//Id Руководителя сотрудника
         public string Role { get; init; }//Должность
         public bool IsFire { get; init; } = false;// Уволеный сотрудник
 

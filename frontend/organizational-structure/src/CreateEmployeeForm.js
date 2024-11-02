@@ -1,37 +1,69 @@
 import * as React from "react";
-import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
-import Select from "@mui/material/Select";
-import MenuItem from "@mui/material/MenuItem";
-import InputLabel from "@mui/material/InputLabel";
-import FormControl from "@mui/material/FormControl";
+import {
+  Box,
+  FormControl,
+  Select,
+  MenuItem,
+  InputLabel,
+  ListSubheader,
+  TextField,
+} from "@mui/material";
 
-function MyButton() {
-    const [count, setCount] = React.useState(0);
-  
-    function handleClick() {
-      setCount(count + 1);
+import { fetchEmployees,createEmployees } from "./HttpRequest.js";
+
+const buttonStyle = {
+  width: "450px",
+  height: "35px",
+  fontSize: "17px",
+  marginTop: "10px",
+  marginRight: "5px",
+};
+const containsText = (text, searchText) =>
+  text.toLowerCase().includes(searchText.toLowerCase());
+
+function CreateEmployeeForm() {
+  const [allOptions, setAllOptions] = React.useState([""]);
+  const [firstName_TextField, setFirstName_TextField] = React.useState();
+  const [lastName_TextField, setLastName_TextField] = React.useState();
+  const [middleName_TextField, setMiddleName_TextField] = React.useState();
+  const [Role_TextField, setRole_TextField] = React.useState();
+
+  const [selectedOption, setSelectedOption] = React.useState("");
+  const [displayedOptions, setDisplayedOptions] = React.useState([]);
+
+  async function UpdateData() {
+    let response = await fetchEmployees();
+    console.log(response)
+    let data = [];
+    for (let i = 0; i < response.length; i++) {
+      data.push(`${response[i].employeeCode}  ${response[i].firstName} ${response[i].lastName} ${response[i].middleName}`);
     }
-  
-    return (
-      <button onClick={handleClick} className="button">
-        Кликнули {count} раз
-      </button>
+    setAllOptions(data);
+    setDisplayedOptions(data);
+  }
+
+  React.useEffect(() => {
+    UpdateData();
+  }, []);
+
+  function onChange_SearchText(searchText) {
+    setDisplayedOptions(
+      allOptions.filter((option) => containsText(option, searchText))
     );
   }
 
-function CreateEmployeeForm() {
-//   const [value, setValue] = React.useState("1");
 
-//   const handleChangeSelect = (event, newValue) => {
-//     setValue(newValue);
-//   };
 
-//   const [count, setCount] = React.useState(0);
-
-//   function handleChangeAddEmployee() {
-//     setCount(count + 1);
-  //}
+  function handleClick_AddEmployee() {
+    let employee = {
+      firstName: firstName_TextField,
+      lastName: lastName_TextField,
+      middleName: middleName_TextField,
+      role: Role_TextField,
+      leaderId: parseInt("0")
+    }
+    createEmployees(employee);
+  }
 
   return (
     <div className="container">
@@ -43,38 +75,86 @@ function CreateEmployeeForm() {
         }}
       >
         <TextField
-          id="firstName"
-          className="TextField"
           label="Фамилия"
           margin="normal"
-          value=""
+          onChange={(event) => setFirstName_TextField(event.target.value)}
         />
-        <TextField className="TextField" label="Имя" margin="normal" />
-        <TextField className="TextField" label="Отчество" margin="normal" />
-        <TextField className="TextField" label="Должность" margin="normal" />
-        <FormControl width="200px">
-          <InputLabel id="demo-simple-select-label">Руководитель</InputLabel>
+        <TextField
+          label="Имя"
+          margin="normal"
+          onChange={(event) => setLastName_TextField(event.target.value)}
+        />
+        <TextField
+          label="Отчество"
+          margin="normal"
+          onChange={(event) => setMiddleName_TextField(event.target.value)}
+        />
+        <TextField
+          label="Должность"
+          margin="normal"
+          onChange={(event) => setRole_TextField(event.target.value)}
+        />
+        <FormControl margin="normal">
+          <InputLabel id="search-select-label">Руководитель</InputLabel>
           <Select
-            id="selectBoss"
-            labelId="demo-simple-select-label"
+            MenuProps={{ autoFocus: false }}
+            labelId="search-select-label"
+            id="search-select"
+            value={selectedOption}
             label="Руководитель"
-            width="450px"
-            // onChange={handleChangeSelect}
+            onChange={(e) => setSelectedOption(e.target.value)}
+            renderValue={() => selectedOption}
           >
-            <MenuItem>Валентин</MenuItem>
-            <MenuItem>Генадий</MenuItem>
-            <MenuItem>Маршал</MenuItem>
+            <ListSubheader>
+              <TextField
+                size="small"
+                placeholder="Введите для поиска..."
+                fullWidth
+                onChange={(e) => onChange_SearchText(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key !== "Escape") {
+                    e.stopPropagation();
+                  }
+                }}
+              />
+            </ListSubheader>
+            {displayedOptions.map((option, i) => (
+              <MenuItem key={i} value={option}>
+                {option}
+              </MenuItem>
+            ))}
           </Select>
         </FormControl>
-        <div>
-            <MyButton className="button" ></MyButton>
-          {/* <button className="button" onChange={handleChangeAddEmployee}>
-            Добавить{count}
-          </button> */}
-        </div>
+
+        <button onClick={handleClick_AddEmployee} style={buttonStyle}>
+          Добавить {selectedOption}
+        </button>
       </Box>
     </div>
   );
 }
 
 export default CreateEmployeeForm;
+
+// {/*
+//  const [leader, setAge] = React.useState("");
+//           function handleChangeSelect(event) {
+//     setAge(event.target.value);
+//   }
+
+//         <FormControl width="200px" margin="normal">
+//           <InputLabel id="demo-simple-select-label">Руководитель</InputLabel>
+//           <Select
+//             id="selectBoss"
+
+//             labelId="demo-simple-select-label"
+//             label="Руководитель"
+//             width="450px"
+//             value={leader}
+//             onChange={handleChangeSelect}
+//           >
+//             <MenuItem value={"Валентин"}>Валентин</MenuItem>
+//             <MenuItem value={"Генадий"}>Генадий</MenuItem>
+//             <MenuItem value={"Маршал"}>Маршал</MenuItem>
+//           </Select>
+//         </FormControl> */}
