@@ -19,8 +19,8 @@
     "Parameters": [
       {
         "Name": "employeeCode",
-        "Type": "System.String",
-        "IsRequired": false
+        "Type": "System.Int32",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -32,7 +32,13 @@
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "employeeCode",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -45,8 +51,8 @@
     "Parameters": [
       {
         "Name": "employeeCode",
-        "Type": "System.String",
-        "IsRequired": false
+        "Type": "System.Int32",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []

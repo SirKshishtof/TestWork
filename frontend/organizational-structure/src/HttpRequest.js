@@ -17,21 +17,37 @@ import axios from "axios";
 // };
 
 
-export async function createEmployees(newEmployee)
+export async function createEmployee(newEmployee)
 {
 	try {
-		let resposne = await axios.post("http://localhost:5003/notes", newEmployee);
+		let resposne = await axios.post("https://localhost:7146/hire", newEmployee);
+		
+		alert(resposne.status);
 		return resposne.status;
+		
 	} catch (e) {
+		alert("Сервер не отвечает");
 		console.error(e);
 	}
 };
 
-export async function fetchEmployees()
+export async function fetchAllEmployees()
 {
 	try {
 	var resposne = await axios.get("https://localhost:7146/allemployee");
-	
+		return resposne.data;
+	} 
+	catch (e) {
+		console.error(e);
+	}
+};
+
+export async function fetchEmployee(employeeCode)
+{
+	try {
+		let uri = "https://localhost:7146/employee?employeeCode="+employeeCode
+	var resposne = await axios.get(uri);
+	//console.log(resposne.data);
 		return resposne.data;
 	} 
 	catch (e) {

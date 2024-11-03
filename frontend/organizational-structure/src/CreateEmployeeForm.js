@@ -9,20 +9,27 @@ import {
   TextField,
 } from "@mui/material";
 
-import { fetchEmployees,createEmployees } from "./HttpRequest.js";
+import { fetchAllEmployees, createEmployee } from "./HttpRequest.js";
+import { buttonStyle } from "./ButtonStyle.js";
 
-const buttonStyle = {
-  width: "450px",
-  height: "35px",
-  fontSize: "17px",
-  marginTop: "10px",
-  marginRight: "5px",
-};
-const containsText = (text, searchText) =>
-  text.toLowerCase().includes(searchText.toLowerCase());
+// const buttonStyle = {
+//   width: "450px",
+//   height: "35px",
+//   fontSize: "17px",
+//   marginTop: "10px",
+//   marginRight: "5px",
+// };
 
-function CreateEmployeeForm() {
+// const containsText = (text, searchText) =>
+//   text.toLowerCase().includes(searchText.toLowerCase());
+
+function containsText(text, searchText) {
+  return text.toLowerCase().includes(searchText.toLowerCase());
+}
+
+export default function CreateEmployeeForm() {
   const [allOptions, setAllOptions] = React.useState([""]);
+
   const [firstName_TextField, setFirstName_TextField] = React.useState();
   const [lastName_TextField, setLastName_TextField] = React.useState();
   const [middleName_TextField, setMiddleName_TextField] = React.useState();
@@ -31,28 +38,32 @@ function CreateEmployeeForm() {
   const [selectedOption, setSelectedOption] = React.useState("");
   const [displayedOptions, setDisplayedOptions] = React.useState([]);
 
-  async function UpdateData() {
-    let response = await fetchEmployees();
-    console.log(response)
-    let data = [];
-    for (let i = 0; i < response.length; i++) {
-      data.push(`${response[i].employeeCode}  ${response[i].firstName} ${response[i].lastName} ${response[i].middleName}`);
-    }
-    setAllOptions(data);
-    setDisplayedOptions(data);
-  }
-
-  React.useEffect(() => {
-    UpdateData();
-  }, []);
-
   function onChange_SearchText(searchText) {
     setDisplayedOptions(
       allOptions.filter((option) => containsText(option, searchText))
     );
   }
 
+  async function updateData() {
+    let response = await fetchAllEmployees();
+    // console.log(response)
+    let data = [];
 
+    if (response.length > 0) {
+      for (let i = 0; i < response.length; i++) {
+        data.push(
+          `${response[i].employeeCode} ${response[i].firstName} ${response[i].lastName} ${response[i].middleName}`
+        );
+      }
+    }
+    
+    setAllOptions(data);
+    setDisplayedOptions(data);
+  }
+
+  React.useEffect(() => {
+    updateData();
+  }, []);
 
   function handleClick_AddEmployee() {
     let employee = {
@@ -60,9 +71,15 @@ function CreateEmployeeForm() {
       lastName: lastName_TextField,
       middleName: middleName_TextField,
       role: Role_TextField,
-      leaderId: parseInt("0")
-    }
-    createEmployees(employee);
+      leaderId: parseInt(
+        selectedOption.slice(0, selectedOption.indexOf(" ", 0))
+      ),
+    };
+    createEmployee(employee);
+    // if (createEmployee(employee) === 200) alert("Сотрудник добавлен");
+    // else alert("Что-то пошло не так");
+    //console.log(createEmployee(employee) );
+    //if (createEmployee(employee).PromiseResult === 200 )console.log("Сотрудник добавлен");
   }
 
   return (
@@ -127,34 +144,11 @@ function CreateEmployeeForm() {
         </FormControl>
 
         <button onClick={handleClick_AddEmployee} style={buttonStyle}>
-          Добавить {selectedOption}
+          Добавить сотрудника
         </button>
       </Box>
     </div>
   );
 }
 
-export default CreateEmployeeForm;
-
-// {/*
-//  const [leader, setAge] = React.useState("");
-//           function handleChangeSelect(event) {
-//     setAge(event.target.value);
-//   }
-
-//         <FormControl width="200px" margin="normal">
-//           <InputLabel id="demo-simple-select-label">Руководитель</InputLabel>
-//           <Select
-//             id="selectBoss"
-
-//             labelId="demo-simple-select-label"
-//             label="Руководитель"
-//             width="450px"
-//             value={leader}
-//             onChange={handleChangeSelect}
-//           >
-//             <MenuItem value={"Валентин"}>Валентин</MenuItem>
-//             <MenuItem value={"Генадий"}>Генадий</MenuItem>
-//             <MenuItem value={"Маршал"}>Маршал</MenuItem>
-//           </Select>
-//         </FormControl> */}
+//export default CreateEmployeeForm;

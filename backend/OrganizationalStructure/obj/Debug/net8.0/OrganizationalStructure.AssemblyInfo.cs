@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OrganizationalStructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9406c6e8eb72c33e2d40f7c7920ada94518c8533")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5fa1ba39c206afd5fc02b85ccaf63c6f8af8ca63")]
 [assembly: System.Reflection.AssemblyProductAttribute("OrganizationalStructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OrganizationalStructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

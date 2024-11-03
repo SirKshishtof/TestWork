@@ -25,6 +25,16 @@ namespace OrganizationalStructure.Entities
             Role = request.role;
         }
 
+        public Employee(CreateEmployeeRequest request, bool ifFire)
+        {
+            FirstName = request.firstName;
+            LastName = request.lastName;
+            MiddleName = request.middleName;
+            LeaderId = request.leaderId;
+            Role = request.role;
+            IsFire = ifFire;
+        }
+
         [Key]
         public Guid Id { get; init; }
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

@@ -1,3 +1,3 @@
-namespace MyNotes.Contracts;
+namespace OrganizationalStructure.Request;
 
 public record GetEmployeeRequest(string employeeCode);

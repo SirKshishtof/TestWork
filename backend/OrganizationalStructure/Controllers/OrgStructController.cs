@@ -1,9 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using MyNotes.Contracts;
 using OrganizationalStructure.DatabaseAcsses;
 using OrganizationalStructure.Entities;
 using OrganizationalStructure.Request;
+using System.ComponentModel;
+using System.Data;
 
 namespace OrganizationalStructure.Controllers
 {
@@ -20,59 +21,100 @@ namespace OrganizationalStructure.Controllers
         [HttpPost("/hire")]
         public async Task<IActionResult> CreateEmployee([FromBody] CreateEmployeeRequest request)
         {
-            Employee employee = new Employee(request);
-            await dbContext.Employees.AddAsync(employee);
-            await dbContext.SaveChangesAsync();
-            return Ok();
-            //if (request) 
-            //{
-            //    await dbContext.Employees.AddAsync(new Employee(request));
-            //    await dbContext.SaveChangesAsync();
-            //    return Ok();
-            //}
-            //else 
-            //{
-            //    return BadRequest();
-            //}
-        }
-
-        [HttpGet("/allemployee")]
-        public async Task<IActionResult> GetAllEmployee(/*[FromQuery] GetEmployeeRequest request*/)
-        {
-            var notesQuery = dbContext.Employees;
-            ////.Where(n => !string.IsNullOrWhiteSpace(request.Search));
-
-            //var notesQuery = dbContext.Employees
-            //.Where(n => n.FirstName == request.Code);
-
-            return Ok(notesQuery);
+            
+            try
+            {
+                Employee employee = new Employee(request);
+                await dbContext.Employees.AddAsync(employee);
+                await dbContext.SaveChangesAsync();
+                return Ok();
+            }
+            catch
+            {
+                return BadRequest();
+            }
         }
 
         [HttpGet("/employee")]
-        public async Task<IActionResult> GetEmployee(/*[FromQuery] GetEmployeeRequest request*/)
+        public IActionResult GetEmployee([FromQuery] int employeeCode)
         {
-            var notesQuery = dbContext.Employees;
-            ////.Where(n => !string.IsNullOrWhiteSpace(request.Search));
 
-            //var notesQuery = dbContext.Employees
-            //.Where(n => n.FirstName == request.Code);
+            var employee = dbContext.Employees
+                .Where(e => e.EmployeeCode == employeeCode).ToList();
 
-            return Ok(notesQuery);
+
+
+            var employeeAndLeader = dbContext.Employees
+                .Where(e => e.EmployeeCode == employeeCode)
+                .Union
+                (
+                   dbContext.Employees
+                    .Where(e => e.EmployeeCode == employee[0].LeaderId))
+                .Select(e => new
+                {
+                    e.EmployeeCode,
+                    e.FirstName,
+                    e.LastName,
+                    e.LeaderId,
+                    e.MiddleName,
+                    e.Role,
+                    e.IsFire
+                });
+
+            return Ok(employeeAndLeader);
         }
 
         [HttpPatch("/fire")]
-        public async Task<IActionResult> FireEmplloye([FromQuery] GetEmployeeRequest request)
+        public async Task<IActionResult> FireEmplloye([FromQuery] int employeeCode, int newLeaderCode)
         {
             return Ok();
         }
 
         [HttpDelete("/delete")]
-        public async Task<IActionResult> DeleteEmplloye([FromQuery] GetEmployeeRequest request)
+        public async Task<IActionResult> DeleteEmplloye([FromQuery] int employeeCode)
         {
 
 
             return Ok();
         }
+
+
+        [HttpGet("/allemployee")]
+        public IActionResult GetAllEmployees()
+        {
+            var notesQuery = dbContext.Employees
+                .Where(e => !e.IsFire)
+                .Select(e => new
+                {
+                    e.EmployeeCode,
+                    e.FirstName,
+                    e.LastName,
+                    e.LeaderId,
+                    e.MiddleName,
+                    e.Role,
+                });
+
+            return Ok(notesQuery);
+        }
+
+        [HttpGet("/allsubordinates")]
+        public IActionResult GetAllSubordinates([FromQuery] int employeeCode)
+        {
+            var notesQuery = dbContext.Employees
+                .Where(e => !e.IsFire)
+                .Select(e => new
+                {
+                    e.EmployeeCode,
+                    e.FirstName,
+                    e.LastName,
+                    e.LeaderId,
+                    e.MiddleName,
+                    e.Role,
+                });
+
+            return Ok(notesQuery);
+        }
+
     }
 
 
