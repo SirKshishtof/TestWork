@@ -7,34 +7,23 @@ import {
   InputLabel,
   ListSubheader,
   TextField,
+  Button,
 } from "@mui/material";
 
 import { fetchAllEmployees, createEmployee } from "./HttpRequest.js";
-import { buttonStyle } from "./ButtonStyle.js";
+import { bigButtonStyle } from "./styles.js";
+import { containsText} from "./ContainsText.js"
+import {getAllOptionsFromResponse} from "./GetAllOptionsFromResponse.js"
 
-// const buttonStyle = {
-//   width: "450px",
-//   height: "35px",
-//   fontSize: "17px",
-//   marginTop: "10px",
-//   marginRight: "5px",
-// };
-
-// const containsText = (text, searchText) =>
-//   text.toLowerCase().includes(searchText.toLowerCase());
-
-function containsText(text, searchText) {
-  return text.toLowerCase().includes(searchText.toLowerCase());
-}
 
 export default function CreateEmployeeForm() {
-  const [allOptions, setAllOptions] = React.useState([""]);
 
   const [firstName_TextField, setFirstName_TextField] = React.useState();
   const [lastName_TextField, setLastName_TextField] = React.useState();
   const [middleName_TextField, setMiddleName_TextField] = React.useState();
   const [Role_TextField, setRole_TextField] = React.useState();
 
+  const [allOptions, setAllOptions] = React.useState([]);//""
   const [selectedOption, setSelectedOption] = React.useState("");
   const [displayedOptions, setDisplayedOptions] = React.useState([]);
 
@@ -46,18 +35,14 @@ export default function CreateEmployeeForm() {
 
   async function updateData() {
     let response = await fetchAllEmployees();
-    // console.log(response)
     let data = [];
-
-    if (response.length > 0) {
-      for (let i = 0; i < response.length; i++) {
-        data.push(
-          `${response[i].employeeCode} ${response[i].firstName} ${response[i].lastName} ${response[i].middleName}`
-        );
+    if (response !== undefined) {
+      if (response !== undefined) {
+        getAllOptionsFromResponse(data, response)
       }
     }
-    
-    setAllOptions(data);
+
+    setAllOptions(data); 
     setDisplayedOptions(data);
   }
 
@@ -76,10 +61,6 @@ export default function CreateEmployeeForm() {
       ),
     };
     createEmployee(employee);
-    // if (createEmployee(employee) === 200) alert("Сотрудник добавлен");
-    // else alert("Что-то пошло не так");
-    //console.log(createEmployee(employee) );
-    //if (createEmployee(employee).PromiseResult === 200 )console.log("Сотрудник добавлен");
   }
 
   return (
@@ -143,9 +124,12 @@ export default function CreateEmployeeForm() {
           </Select>
         </FormControl>
 
-        <button onClick={handleClick_AddEmployee} style={buttonStyle}>
+        <Button
+          style={ bigButtonStyle}
+          onClick={handleClick_AddEmployee}
+        >
           Добавить сотрудника
-        </button>
+        </Button>
       </Box>
     </div>
   );

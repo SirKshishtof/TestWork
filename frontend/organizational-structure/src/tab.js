@@ -5,7 +5,7 @@ import TabContext from "@mui/lab/TabContext";
 import TabList from "@mui/lab/TabList";
 import TabPanel from "@mui/lab/TabPanel";
 import CreateEmployeeForm from "./CreateEmployeeForm.js";
-import FindEmployeeForm from "./FindEmployeeForm.js"
+import FindEmployeeForm from "./FindEmployeeForm.js";
 
 function LabTabs() {
   const [value, setValue] = React.useState("1");
@@ -28,9 +28,11 @@ function LabTabs() {
             </TabList>
           </Box>
           <TabPanel value="1">
-            <CreateEmployeeForm/>
+            <CreateEmployeeForm />
           </TabPanel>
-          <TabPanel value="2"><FindEmployeeForm/></TabPanel>
+          <TabPanel value="2">
+            <FindEmployeeForm />
+          </TabPanel>
         </TabContext>
       </Box>
     </div>

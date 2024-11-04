@@ -11,12 +11,12 @@
       "RelativeMoniker": "D:0:0:{14F77C42-4085-4566-8C8C-C175EA049D62}|OrganizationalStructure.csproj|solutionrelative:entities\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{14F77C42-4085-4566-8C8C-C175EA049D62}|OrganizationalStructure.csproj|d:\\base\\zlowolf\\testwork\\backend\\organizationalstructure\\databaseacsses\\orgstructdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{14F77C42-4085-4566-8C8C-C175EA049D62}|OrganizationalStructure.csproj|solutionrelative:databaseacsses\\orgstructdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{14F77C42-4085-4566-8C8C-C175EA049D62}|OrganizationalStructure.csproj|d:\\base\\zlowolf\\testwork\\backend\\organizationalstructure\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{14F77C42-4085-4566-8C8C-C175EA049D62}|OrganizationalStructure.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14F77C42-4085-4566-8C8C-C175EA049D62}|OrganizationalStructure.csproj|d:\\base\\zlowolf\\testwork\\backend\\organizationalstructure\\databaseacsses\\orgstructdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{14F77C42-4085-4566-8C8C-C175EA049D62}|OrganizationalStructure.csproj|solutionrelative:databaseacsses\\orgstructdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,20 +38,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Employee.cs",
-              "DocumentMoniker": "D:\\Base\\Zlowolf\\TestWork\\backend\\OrganizationalStructure\\Entities\\Employee.cs",
-              "RelativeDocumentMoniker": "Entities\\Employee.cs",
-              "ToolTip": "D:\\Base\\Zlowolf\\TestWork\\backend\\OrganizationalStructure\\Entities\\Employee.cs",
-              "RelativeToolTip": "Entities\\Employee.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAgwCIAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-03T09:02:53.666Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "OrgStructDBContext.cs",
               "DocumentMoniker": "D:\\Base\\Zlowolf\\TestWork\\backend\\OrganizationalStructure\\DatabaseAcsses\\OrgStructDBContext.cs",
               "RelativeDocumentMoniker": "DatabaseAcsses\\OrgStructDBContext.cs",
@@ -59,8 +46,7 @@
               "RelativeToolTip": "DatabaseAcsses\\OrgStructDBContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-31T01:03:52.302Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-31T01:03:52.302Z"
             },
             {
               "$type": "Document",
@@ -70,23 +56,34 @@
               "RelativeDocumentMoniker": "Controllers\\OrgStructController.cs",
               "ToolTip": "D:\\Base\\Zlowolf\\TestWork\\backend\\OrganizationalStructure\\Controllers\\OrgStructController.cs",
               "RelativeToolTip": "Controllers\\OrgStructController.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAYwFMAAABBAAAAAAAAAA==",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAkwGsAAABNAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-31T00:57:11.984Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
+              "Title": "Employee.cs",
+              "DocumentMoniker": "D:\\Base\\Zlowolf\\TestWork\\backend\\OrganizationalStructure\\Entities\\Employee.cs",
+              "RelativeDocumentMoniker": "Entities\\Employee.cs",
+              "ToolTip": "D:\\Base\\Zlowolf\\TestWork\\backend\\OrganizationalStructure\\Entities\\Employee.cs",
+              "RelativeToolTip": "Entities\\Employee.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAArwC4AAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-03T09:02:53.666Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Base\\Zlowolf\\TestWork\\backend\\OrganizationalStructure\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "D:\\Base\\Zlowolf\\TestWork\\backend\\OrganizationalStructure\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAoAAAAAAAAAAAApwB8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-31T00:47:21.488Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-31T00:47:21.488Z"
             }
           ]
         }

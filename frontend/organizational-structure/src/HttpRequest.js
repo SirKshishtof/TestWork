@@ -1,33 +1,55 @@
 import axios from "axios";
 
-// export const fetchNotes = async (filter) => {
-// 	try {
-// 		var resposne = await axios.get("http://194.76.173.38:5432/notes", {
-// 			params: {
-// 				search: filter?.search,
-// 				sortItem: filter?.sortItem,
-// 				sortOrder: filter?.sortOrder,
-// 			},
-// 		});
-
-// 		return resposne.data.notes;
-// 	} catch (e) {
-// 		console.error(e);
-// 	}
-// };
-
-
 export async function createEmployee(newEmployee)
 {
 	try {
 		let resposne = await axios.post("https://localhost:7146/hire", newEmployee);
 		
-		alert(resposne.status);
+		alert("Сотрудник успешно добавлен");
 		return resposne.status;
 		
 	} catch (e) {
 		alert("Сервер не отвечает");
+	}
+};
+export async function fetchEmployee(employeeCode)
+{
+	try {
+		let uri = "https://localhost:7146/employee?employeeCode="+employeeCode
+	var resposne = await axios.get(uri);
+	//console.log(resposne.data);
+		return resposne.data;
+	} 
+	catch (e) {
 		console.error(e);
+	}
+};
+
+export async function fireEmplloye(employeeCode, newLeaderCode)
+{
+	console.log(employeeCode);
+	console.log(newLeaderCode);
+	try {
+		let uri;
+		if (newLeaderCode!==undefined) uri ="https://localhost:7146/fire?employeeCode="+employeeCode+"&newLeaderCode="+newLeaderCode;
+		else uri = "https://localhost:7146/fire?employeeCode="+employeeCode
+		var resposne = await axios.patch(uri);
+		return resposne.status;
+	} 
+	catch (e) {
+		alert("Не удалось уволить сотрудника");
+	}
+};
+
+export async function deleteEmplloye(employeeCode)
+{
+	try {
+		let uri = "https://localhost:7146/delete?employeeCode="+employeeCode
+		var resposne = await axios.delete(uri);
+		return resposne.status;
+	} 
+	catch (e) {
+		alert("Не удалось удалить сотрудника");
 	}
 };
 
@@ -42,10 +64,12 @@ export async function fetchAllEmployees()
 	}
 };
 
-export async function fetchEmployee(employeeCode)
+
+
+export async function fetchAllsubordinates(employeeCode)
 {
 	try {
-		let uri = "https://localhost:7146/employee?employeeCode="+employeeCode
+		let uri = "https://localhost:7146/allsubordinates?employeeCode="+employeeCode
 	var resposne = await axios.get(uri);
 	//console.log(resposne.data);
 		return resposne.data;
@@ -54,18 +78,6 @@ export async function fetchEmployee(employeeCode)
 		console.error(e);
 	}
 };
-
-// axios.post('/user', {
-//     firstName: 'Fred',
-//     lastName: 'Flintstone'
-//   })
-//   .then(function (response) {
-//     console.log(response);
-//   })
-//   .catch(function (error) {
-//     console.log(error);
-//   });
-
 
 
 
