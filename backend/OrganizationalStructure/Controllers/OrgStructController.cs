@@ -5,6 +5,7 @@ using OrganizationalStructure.Entities;
 using OrganizationalStructure.Request;
 using System.ComponentModel;
 using System.Data;
+using System.Text.Json;
 
 namespace OrganizationalStructure.Controllers
 {
@@ -24,8 +25,25 @@ namespace OrganizationalStructure.Controllers
             
             try
             {
-                Employee employee = new Employee(request);
-                await dbContext.Employees.AddAsync(employee);
+                var employee = new Employee(request);
+
+                var employees = dbContext.Employees.ToList();
+
+                if (employees.Count != 0 && request.leaderCode != -1)
+                {
+                    await dbContext.Employees.AddAsync(employee);
+                }
+                else 
+                {
+                    if (employees.Count == 0 && request.leaderCode == -1)
+                    {
+                        await dbContext.Employees.AddAsync(employee);
+                    }
+                    else 
+                    {
+                        return BadRequest("Директор уже существует");
+                    }
+                }
                 await dbContext.SaveChangesAsync();
                 return Ok();
             }
@@ -49,13 +67,13 @@ namespace OrganizationalStructure.Controllers
                 .Union
                 (
                    dbContext.Employees
-                    .Where(e => e.EmployeeCode == employee[0].LeaderId))
+                    .Where(e => e.EmployeeCode == employee[0].LeaderCode))
                 .Select(e => new
                 {
                     e.EmployeeCode,
                     e.FirstName,
                     e.LastName,
-                    e.LeaderId,
+                    e.LeaderCode,
                     e.MiddleName,
                     e.Role,
                     e.IsFire
@@ -76,11 +94,12 @@ namespace OrganizationalStructure.Controllers
                 var employee = dbContext.Employees.Where(e => e.EmployeeCode == employeeCode)
                     .ExecuteUpdate(e => e.SetProperty(upd => upd.IsFire, upd => true));
                 return Ok();
+                await dbContext.SaveChangesAsync();
             }
             else
             {
                 var subordinates = dbContext.Employees
-                .Where(e => e.LeaderId == employeeCode).ToList();
+                .Where(e => e.LeaderCode == employeeCode).ToList();
 
                 if (subordinates.Count > 0)
                 {
@@ -88,28 +107,25 @@ namespace OrganizationalStructure.Controllers
                     .Where(e => e.EmployeeCode == employeeCode).ToList();
 
                     var employee = dbContext.Employees.Where(e => e.EmployeeCode == newLeaderCode)
-                        .ExecuteUpdate(e => e.SetProperty(upd => upd.LeaderId, upd => fireEmployee[0].LeaderId));
+                        .ExecuteUpdate(e => e.SetProperty(upd => upd.LeaderCode, upd => fireEmployee[0].LeaderCode));
 
-                    employee = dbContext.Employees.Where(e => e.LeaderId == employeeCode)
-                        .ExecuteUpdate(e => e.SetProperty(upd => upd.LeaderId, upd => newLeaderCode));
+                    employee = dbContext.Employees.Where(e => e.LeaderCode == employeeCode)
+                        .ExecuteUpdate(e => e.SetProperty(upd => upd.LeaderCode, upd => newLeaderCode));
 
                     employee = dbContext.Employees.Where(e => e.EmployeeCode == employeeCode)
                         .ExecuteUpdate(e => e.SetProperty(upd => upd.IsFire, upd => true));
                     return Ok();
+                    await dbContext.SaveChangesAsync();
                 }
                 else
                 {
                     return BadRequest();
                 }
 
-
-                //    .Where(e => e.EmployeeCode == employeeCode)
-                //    .ExecuteUpdate(e => e.SetProperty(upd => upd.IsFire, upd => true));
-                //https://localhost:7146/fire?employeeCode=15&newLeaderCode=1
-                //'https://localhost:7146/fire?employeeCode=15'
             }
         }
-            [HttpDelete("/delete")]
+        
+        [HttpDelete("/delete")]
         public async Task<IActionResult> DeleteEmplloye([FromQuery] int employeeCode)
         {
             var employee = dbContext.Employees
@@ -138,78 +154,83 @@ namespace OrganizationalStructure.Controllers
 
         }
 
-
         [HttpGet("/allemployee")]
         public IActionResult GetAllEmployees()
         {
-            var notesQuery = dbContext.Employees
+            var employees = dbContext.Employees
                 .Where(e => !e.IsFire)
                 .Select(e => new
                 {
                     e.EmployeeCode,
                     e.FirstName,
                     e.LastName,
-                    e.LeaderId,
+                    e.LeaderCode,
                     e.MiddleName,
                     e.Role,
                 });
 
-            return Ok(notesQuery);
+            var list = employees.ToList();
+            return Ok(employees);
         }
 
         [HttpGet("/allsubordinates")]
         public IActionResult GetAllSubordinates([FromQuery] int employeeCode)
         {
-            var notesQuery = dbContext.Employees
-                .Where(e => !e.IsFire && e.LeaderId == employeeCode)
+            var employees = dbContext.Employees
+                .Where(e => !e.IsFire && e.LeaderCode == employeeCode)
                 .Select(e => new
                 {
                     e.EmployeeCode,
                     e.FirstName,
                     e.LastName,
-                    e.LeaderId,
+                    e.LeaderCode,
                     e.MiddleName,
                     e.Role,
                 });
-
-            return Ok(notesQuery);
+            
+            return Ok(employees);
         }
 
-        [HttpGet("/allallemployee")]
-        public IActionResult GetAllAllEmployees()
-        {
-            var notesQuery = dbContext.Employees
-                .Select(e => new
-                {
-                    e.EmployeeCode,
-                    e.FirstName,
-                    e.LastName,
-                    e.LeaderId,
-                    e.MiddleName,
-                    e.Role,
-                });
 
-            return Ok(notesQuery);
-        }
 
-        [HttpPost("/hirefire")]
-        public async Task<IActionResult> Dohirefire([FromBody] CreateEmployeeRequest request)
+        [HttpGet("/createTestData")]
+        public async Task<IActionResult> CreateTestData()
         {
             try
             {
-                Employee employee = new Employee(request, true);
-                await dbContext.Employees.AddAsync(employee);
-                await dbContext.SaveChangesAsync();
-                return Ok();
+                var employees = dbContext.Employees.ToList();
+                if (employees.Count == 0)
+                {
+
+                    await dbContext.Employees.AddAsync(new Employee(1, "Колоновская", "Алиса", "Давидовна", "Директор", -1));
+                    await dbContext.Employees.AddAsync(new Employee(2, "Колоновская", "Василиса", "Давидовна", "Бухгалтер", 1));
+                    await dbContext.Employees.AddAsync(new Employee(3, "Рыжий", "Алекс", "Константинович", "Слесарь", 1));
+                    await dbContext.Employees.AddAsync(new Employee(4, "Лебедь", "Никита", "Владимирович", "Программист", 1));
+                    await dbContext.Employees.AddAsync(new Employee(5, "Альминова", "Альбина", "Рамилевна", "Системный аналитик", 1));
+                    await dbContext.Employees.AddAsync(new Employee(6, "Тарасов", "Михаил", "Петрович", "Тестировщик", 4));
+                    await dbContext.Employees.AddAsync(new Employee(7, "Клюев", "Александр", "Владиславович", "Повар", 2));
+                    await dbContext.Employees.AddAsync(new Employee(8, "Булатов", "Яков", "Ярославович", "Безопасник", 2));
+                    await dbContext.Employees.AddAsync(new Employee(9, "Маркова", "Эмилия", "Михайловна", "Дизайнер", 3));
+                    await dbContext.Employees.AddAsync(new Employee(10, "Назаров", "Михаил", "Михайлович", "Завхоз", 3));
+                    await dbContext.Employees.AddAsync(new Employee(11, "Савина", "Милана", "Тимуровна", "Уборщица", 3));
+                    await dbContext.Employees.AddAsync(new Employee(12, "Дьяконов", "Роман", "Семёнович", "Уборщик", 4));
+                    await dbContext.Employees.AddAsync(new Employee(13, "Смирнов", "Максим", "Львович", "Ремонтник", 4));
+                    await dbContext.Employees.AddAsync(new Employee(14, "Морозова", "Милана", "Егоровна", "Верстальщик", 5));
+                    await dbContext.Employees.AddAsync(new Employee(15, "Горлова", "Элина", "Константиновна", "Бизнес аналитик", 6));
+                    await dbContext.Employees.AddAsync(new Employee(16, "Геральт", "из", "Ривии", "Ведьмак", 5));
+                    await dbContext.SaveChangesAsync();
+
+                    return Ok();
+                }
+                else return BadRequest();
+                
             }
             catch
             {
                 return BadRequest();
             }
-
         }
 
+       
     }
-
-
 }

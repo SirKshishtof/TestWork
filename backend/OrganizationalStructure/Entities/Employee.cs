@@ -7,33 +7,8 @@ namespace OrganizationalStructure.Entities
 {
     public class Employee
     {
-        public Employee(string firstName, string lastName, string middleName, int leaderId, string role)
-        {
-            FirstName = firstName;
-            LastName = lastName;
-            MiddleName = middleName;
-            LeaderId = leaderId;
-            Role = role;
-        }
+        static int directorCode = -1;// Значение -1 означает, что сотрудник является диретором
 
-        public Employee(CreateEmployeeRequest request)
-        {
-            FirstName = request.firstName;
-            LastName = request.lastName;
-            MiddleName = request.middleName;
-            LeaderId = request.leaderId;
-            Role = request.role;
-        }
-
-        public Employee(CreateEmployeeRequest request, bool ifFire)
-        {
-            FirstName = request.firstName;
-            LastName = request.lastName;
-            MiddleName = request.middleName;
-            LeaderId = request.leaderId;
-            Role = request.role;
-            IsFire = ifFire;
-        }
 
         [Key]
         public Guid Id { get; init; }
@@ -42,9 +17,38 @@ namespace OrganizationalStructure.Entities
         public string FirstName { get; init; }//Имя
         public string LastName { get; init; }//Фамилия
         public string MiddleName { get; init; }//Отчество
-        public int LeaderId { get; init; }//Id Руководителя сотрудника
+        public int LeaderCode { get; init; }//Код Руководителя сотрудника. Значение -1 означает, что сотрудник является директором 
         public string Role { get; init; }//Должность
         public bool IsFire { get; init; } = false;// Уволеный сотрудник
+
+
+        public Employee(string firstName, string lastName, string middleName, string role, int leaderCode)
+        {
+            FirstName = firstName;
+            LastName = lastName;
+            MiddleName = middleName;
+            LeaderCode = leaderCode;
+            Role = role;
+        }
+
+        public Employee(CreateEmployeeRequest request)
+        {
+            FirstName = request.firstName;
+            LastName = request.lastName;
+            MiddleName = request.middleName;
+            LeaderCode = request.leaderCode;
+            Role = request.role;
+        }
+
+        public Employee(int employeeCode, string firstName, string lastName, string middleName, string role, int leaderCode)
+        {
+            EmployeeCode = employeeCode;
+            FirstName = firstName;
+            LastName = lastName;
+            MiddleName = middleName;
+            LeaderCode = leaderCode;
+            Role = role;
+        }
 
     }
 }

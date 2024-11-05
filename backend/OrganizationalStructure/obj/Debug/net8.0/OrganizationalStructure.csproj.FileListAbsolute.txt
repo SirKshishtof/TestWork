@@ -187,3 +187,4 @@ D:\Base\Zlowolf\TestWork\backend\OrganizationalStructure\obj\Debug\net8.0\refint
 D:\Base\Zlowolf\TestWork\backend\OrganizationalStructure\obj\Debug\net8.0\OrganizationalStructure.pdb
 D:\Base\Zlowolf\TestWork\backend\OrganizationalStructure\obj\Debug\net8.0\OrganizationalStructure.genruntimeconfig.cache
 D:\Base\Zlowolf\TestWork\backend\OrganizationalStructure\obj\Debug\net8.0\ref\OrganizationalStructure.dll
+D:\Base\Zlowolf\TestWork\backend\OrganizationalStructure\bin\Debug\net8.0\appsettings.Production.json

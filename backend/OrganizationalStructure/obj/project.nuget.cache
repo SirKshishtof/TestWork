@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "59k2G1YOcWo=",
+  "dgSpecHash": "LqhEBgEK2N8=",
   "success": true,
   "projectFilePath": "D:\\Base\\Zlowolf\\TestWork\\backend\\OrganizationalStructure\\OrganizationalStructure.csproj",
   "expectedPackageFiles": [
@@ -19,6 +19,7 @@
     "C:\\Users\\wessy\\.nuget\\packages\\microsoft.extensions.options\\9.0.0-rc.2.24473.5\\microsoft.extensions.options.9.0.0-rc.2.24473.5.nupkg.sha512",
     "C:\\Users\\wessy\\.nuget\\packages\\microsoft.extensions.primitives\\9.0.0-rc.2.24473.5\\microsoft.extensions.primitives.9.0.0-rc.2.24473.5.nupkg.sha512",
     "C:\\Users\\wessy\\.nuget\\packages\\microsoft.openapi\\1.6.14\\microsoft.openapi.1.6.14.nupkg.sha512",
+    "C:\\Users\\wessy\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.21.0\\microsoft.visualstudio.azure.containers.tools.targets.1.21.0.nupkg.sha512",
     "C:\\Users\\wessy\\.nuget\\packages\\npgsql\\8.0.5\\npgsql.8.0.5.nupkg.sha512",
     "C:\\Users\\wessy\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\9.0.0-rc.2\\npgsql.entityframeworkcore.postgresql.9.0.0-rc.2.nupkg.sha512",
     "C:\\Users\\wessy\\.nuget\\packages\\swashbuckle.aspnetcore\\6.6.2\\swashbuckle.aspnetcore.6.6.2.nupkg.sha512",

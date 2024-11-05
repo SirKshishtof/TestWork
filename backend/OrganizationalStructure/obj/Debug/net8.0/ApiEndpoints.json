@@ -1,16 +1,6 @@
 [
   {
     "ContainingType": "OrganizationalStructure.Controllers.OrgStructController",
-    "Method": "GetAllAllEmployees",
-    "RelativePath": "allallemployee",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "OrganizationalStructure.Controllers.OrgStructController",
     "Method": "GetAllEmployees",
     "RelativePath": "allemployee",
     "HttpMethod": "GET",
@@ -33,6 +23,16 @@
         "IsRequired": false
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "OrganizationalStructure.Controllers.OrgStructController",
+    "Method": "CreateTestData",
+    "RelativePath": "createTestData",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {
@@ -92,22 +92,6 @@
     "ContainingType": "OrganizationalStructure.Controllers.OrgStructController",
     "Method": "CreateEmployee",
     "RelativePath": "hire",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "request",
-        "Type": "OrganizationalStructure.Request.CreateEmployeeRequest",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "OrganizationalStructure.Controllers.OrgStructController",
-    "Method": "Dohirefire",
-    "RelativePath": "hirefire",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
